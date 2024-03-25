@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start-docker": "docker-compose up -d",
+    "start-node": "node server.js",
+    "start": "npm run start-docker && npm run start-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
