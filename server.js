@@ -1,18 +1,12 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const connectDB = require('./db/db.js');
+const apiRoutes = require('./routes/routes.js');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Conectando ao MongoDB
-mongoose.connect('mongodb://localhost:27017')
-  .then(() => console.log('Conexão com MongoDB estabelecida'))
-  .catch(err => console.error('Erro ao conectar com MongoDB:', err));
-
-// Definindo uma rota de exemplo
-app.get('/', (req, res) => {
-  res.send('API está funcionando!');
-});
+connectDB();
+app.use('/api', apiRoutes);
 
 // Iniciando o servidor
 app.listen(PORT, () => {
