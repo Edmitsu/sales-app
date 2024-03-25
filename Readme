@@ -1,0 +1,75 @@
+# Sales App
+
+**Sales** é uma aplicação Node.js que permite gerenciar vendas e clientes. Esta aplicação se conecta a um banco de dados MongoDB para armazenar informações sobre vendas e clientes.
+
+## Pré-requisitos
+
+Antes de iniciar, você precisa ter instalado em sua máquina os seguintes softwares:
+
+- Node.js (versão 20.5.1 ou superior)
+- MongoDB
+- Docker (opcional, apenas se você desejar executar a aplicação em um contêiner Docker)
+
+## Instalação
+
+1. Clone este repositório em sua máquina local:
+
+```
+git clone https://github.com/edmitsu/sales-app.git
+```
+
+2. Navegue até o diretório da aplicação:
+
+```
+cd sales-app
+```
+
+3. Instale as dependências usando o npm:
+
+```
+npm install
+```
+
+## Configuração do MongoDB
+
+1. Certifique-se de que o MongoDB esteja instalado e em execução em sua máquina.
+2. Caso necessário, ajuste a URL de conexão com o MongoDB na aplicação. Isso pode ser feito no arquivo `server.js` ou em um arquivo de configuração separado, dependendo da estrutura do seu projeto.
+
+## Execução da Aplicação
+
+### Sem Docker:
+
+Para iniciar a aplicação sem Docker, execute o seguinte comando:
+
+```
+npm start
+```
+
+A aplicação estará disponível em `http://localhost:3000`.
+
+### Com Docker:
+
+Se você preferir executar a aplicação em um contêiner Docker, siga estas etapas:
+
+1. Certifique-se de ter o Docker instalado e em execução em sua máquina.
+2. Execute o seguinte comando para construir a imagem do Docker:
+
+```
+docker build -t sales-app .
+```
+
+3. Após a construção da imagem, inicie o contêiner Docker usando o seguinte comando:
+
+```
+docker run -p 3000:3000 sales-app
+```
+
+A aplicação estará disponível em `http://localhost:3000`.
+
+## Contribuição
+
+Contribuições são bem-vindas! Se você encontrar um problema ou tiver alguma sugestão de melhoria, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
