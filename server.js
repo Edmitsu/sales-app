@@ -1,14 +1,18 @@
 const express = require('express');
 const connectDB = require('./db/db.js');
-const apiRoutes = require('./routes/routes.js');
+const routes = require('./routes/routes.js');
+const products = require('./products');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 connectDB();
-app.use('/api', apiRoutes);
+/* app.use('/api', apiRoutes); */
 
-// Iniciando o servidor
+let cart = {};
+
+app.use('/', routes);
+
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Server running on port: ${PORT}`);
 });
