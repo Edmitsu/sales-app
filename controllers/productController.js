@@ -1,6 +1,9 @@
 const products = require('../products');
+const addProductDTO = require('../dtos/AddProductDTO')
 
-const addProductToCart = (cart, code, quantity) => {
+const addProductToCart = (cart, addProductDTO) => {
+    const { code, quantity } = addProductDTO;
+
     if (!products[code]) {
         return { error: 'Product not found' };
     }
