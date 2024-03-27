@@ -16,6 +16,9 @@ RUN npm install
 # Copie o restante dos arquivos do aplicativo
 COPY . .
 
+# Instalação do MongoDB
+RUN apt-get update && apt-get install -y mongodb
+
 # Exponha a porta que o aplicativo será executado
 EXPOSE 3000
 
